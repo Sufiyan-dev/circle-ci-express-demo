@@ -18,8 +18,21 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () =>
+const server = app.listen(PORT, () =>
     console.log(`App listening to http://localhost:${PORT}`)
 );
 
-module.exports = app;
+// Method to close the server gracefully
+close = function() {
+    return new Promise((resolve, reject) => {
+      server.close((err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+};
+
+module.exports = { app, close};

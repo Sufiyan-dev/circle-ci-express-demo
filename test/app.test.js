@@ -1,5 +1,10 @@
 const request = require('supertest');
-const app = require('../app');
+const { app, close} = require('../app');
+
+afterAll(async () => {
+    // Close the Express server instance
+    await close();
+  });
 
 describe('GET /wassup', () => {
     it('should return "Wasssup!"', async () => {
