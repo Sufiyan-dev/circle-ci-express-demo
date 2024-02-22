@@ -1,4 +1,4 @@
-const express = require('express');
+const  express = require('express');
 
 const app = express();
 
@@ -19,5 +19,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
-    logger.info(`App listening to http://localhost:${PORT}`)
+    console.log(`App listening to http://localhost:${PORT}`)
 );
+
+module.exports = app;
