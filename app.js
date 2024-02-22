@@ -22,6 +22,7 @@ const server = app.listen(PORT, () =>
     console.log(`App listening to http://localhost:${PORT}`)
 );
 
+
 // Method to close the server gracefully
 close = function() {
     return new Promise((resolve, reject) => {
