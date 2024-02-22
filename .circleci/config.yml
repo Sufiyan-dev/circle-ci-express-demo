@@ -31,6 +31,7 @@ workflows:
   test_my_app:
     jobs:
     - test
-    filters:
-      branches:
-        only: main # only deploy when on main
+  echo:
+    jobs:
+    - say-hello
+
